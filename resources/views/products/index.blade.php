@@ -12,6 +12,9 @@
             <th>ID</th>
             <th>Nosaukums</th>
             <th>Cena (€)</th>
+            <th>Daudzums</th>
+            <th>Derīguma termiņš</th>
+            <th>Statuss</th>
             <th>Darbības</th>
         </tr>
         @foreach($products as $product)
@@ -19,6 +22,9 @@
             <td>{{ $product->id }}</td>
             <td>{{ $product->name }}</td>
             <td>{{ $product->price }}</td>
+            <td>{{ $product->quantity }}</td>
+            <td>{{ $product->expiration_date }}</td>
+            <td>{{ ucfirst($product->status) }}</td>
             <td>
                 <a href="{{ route('products.show', $product) }}">Skatīt</a> |
                 <a href="{{ route('products.edit', $product) }}">Rediģēt</a> |
