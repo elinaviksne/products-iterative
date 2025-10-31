@@ -13,5 +13,8 @@ class Product extends Model
         'name',
         'description',
         'price',
+        'quantity',
+        'expiration_date',
+        'status'
     ];
 }
