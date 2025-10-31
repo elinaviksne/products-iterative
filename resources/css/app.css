@@ -96,3 +96,16 @@ html, body {
     padding-left: 20px; /* ievelk sarakstu */
 }
 
+
+/* resources/css/app.css */
+.flash-success {
+    background-color: #e6ffed; /* gaiši zaļš fons */
+    border: 1px solid #4caf50; /* zaļa robeža */
+    color: #2d6a4f; /* tumši zaļš teksts */
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+}
+
+
