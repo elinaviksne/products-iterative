@@ -1,61 +1,77 @@
-/* Holy Grail layout */
+/* Holy Grail layout - full screen + slightly darker sidebars */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
 .layout-container {
     display: grid;
     grid-template-areas:
         "header header header"
         "sidebar-left main sidebar-right"
         "footer footer footer";
-    grid-template-columns: 200px 1fr 200px;
-    grid-template-rows: 60px auto 40px;
-    min-height: 100vh;
-    gap: 5px; /* neliels atstarpe starp zonām */
+    grid-template-columns: 220px 1fr 220px;
+    grid-template-rows: 70px 1fr 50px;
+    height: 100vh; 
+    width: 100vw;  
 }
 
 .header {
     grid-area: header;
-    background: #2d3748;
-    color: white;
+    background: #4a5568; 
+    color: #f7fafc;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid black; /* redzama robeža */
+    font-size: 1.5rem;
 }
 
 .sidebar-left {
     grid-area: sidebar-left;
-    background: #fbbf24; /* spilgta krāsa, vieglāk redzēt */
-    padding: 1rem;
-    border: 2px solid black;
-}
-
-.sidebar-left ul {
-    list-style: none;
+    background: #cbd5e0; 
+    padding: 15px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 10px; 
+}
+
+.sidebar-left a {
+    text-decoration: none; 
+    color: #2d3748;
+    padding: 5px;
+    border-radius: 3px;
+    transition: background 0.2s;
+}
+
+.sidebar-left a:hover {
+    background: #a0aec0; 
 }
 
 .sidebar-right {
     grid-area: sidebar-right;
-    background: #34d399; /* atšķirīga krāsa */
-    padding: 1rem;
+    background: #cbd5e0; 
+    padding: 15px;
     text-align: center;
-    border: 2px solid black;
 }
 
 .main-content {
     grid-area: main;
-    background: #ffffff; /* balts */
-    padding: 20px;
-    border: 2px solid black;
+    background: #edf2f7; 
+    padding: 25px;
 }
 
 .footer {
     grid-area: footer;
-    background: #2d3748;
-    color: white;
+    background: #4a5568;
+    color: #f7fafc;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid black;
 }
