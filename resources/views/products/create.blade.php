@@ -18,6 +18,24 @@
             <input type="number" step="0.01" name="price" value="{{ old('price') }}">
         </p>
 
+        <p>
+            <label>Daudzums:</label><br>
+            <input type="number" name="quantity" value="{{ old('quantity') }}">
+        </p>
+
+        <p>
+            <label>Derīguma termiņš:</label><br>
+            <input type="date" name="expiration_date" value="{{ old('expiration_date') }}">
+        </p>
+
+        <p>
+            <label>Statuss:</label><br>
+            <select name="status">
+                <option value="available" {{ old('status')=='available' ? 'selected' : '' }}>Available</option>
+                <option value="unavailable" {{ old('status')=='unavailable' ? 'selected' : '' }}>Unavailable</option>
+            </select>
+        </p>
+
         <button type="submit">Saglabāt</button>
     </form>
 </x-layout>
