@@ -15,12 +15,9 @@
         </header>
 
         <aside class="sidebar-left">
-            <nav>
-                <ul>
-                    <li><a href="{{ route('products.index') }}">Produkti</a></li>
-                    <!-- Pievieno citus linkus pēc vajadzības -->
-                </ul>
-            </nav>
+            <a href="{{ route('products.index') }}">Produkti</a>
+            <a href="#">Sākums</a>
+            <a href="#">Par mums</a>
         </aside>
 
         <main class="main-content">
