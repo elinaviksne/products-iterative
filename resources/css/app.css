@@ -1,16 +1,18 @@
 /* Holy Grail layout - full screen + slightly darker sidebars */
+/* Reset daži pamata stili */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-html, body {
+body, html {
     height: 100%;
-    width: 100%;
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
 }
 
+/* Holy Grail layout */
 .layout-container {
     display: grid;
     grid-template-areas:
@@ -19,65 +21,68 @@ html, body {
         "footer footer footer";
     grid-template-columns: 220px 1fr 220px;
     grid-template-rows: 70px 1fr 50px;
-    height: 100vh; 
-    width: 100vw;  
+    min-height: 100vh;
 }
 
+/* Header */
 .header {
     grid-area: header;
-    background: #4a5568; 
-    color: #f7fafc;
+    background-color: #3b4a59;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
 }
 
+/* Left sidebar */
 .sidebar-left {
     grid-area: sidebar-left;
-    background: #cbd5e0; 
-    padding: 15px;
+    background-color: #cbd5e0; /* tumšāks nekā main */
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px; 
+    gap: 10px;
 }
 
 .sidebar-left a {
-    text-decoration: none; 
-    color: #2d3748;
-    padding: 5px;
-    border-radius: 3px;
-    transition: background 0.2s;
+    text-decoration: none;
+    color: #2c3e50;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background 0.3s;
 }
 
 .sidebar-left a:hover {
-    background: #a0aec0; 
+    background-color: #a0aec0;
 }
 
+/* Right sidebar */
 .sidebar-right {
     grid-area: sidebar-right;
-    background: #cbd5e0; 
-    padding: 15px;
+    background-color: #cbd5e0; /* tumšāks nekā main */
+    padding: 20px;
     text-align: center;
 }
 
+/* Main content */
 .main-content {
     grid-area: main;
-    background: #edf2f7; 
-    padding: 25px;
+    background-color: #fff;
+    padding: 30px;
+    overflow: auto;
 }
 
+/* Footer */
 .footer {
     grid-area: footer;
-    background: #4a5568;
-    color: #f7fafc;
+    background-color: #3b4a59;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 
-/* resources/css/app.css vai kāds cits tavs CSS fails */
 .flash-error {
     background-color: #ffe5e5; /* gaiši sarkans fons */
     border: 1px solid #ff0000; /* sarkana robeža */
@@ -97,7 +102,6 @@ html, body {
 }
 
 
-/* resources/css/app.css */
 .flash-success {
     background-color: #e6ffed; /* gaiši zaļš fons */
     border: 1px solid #4caf50; /* zaļa robeža */
