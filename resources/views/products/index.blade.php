@@ -1,9 +1,9 @@
 <x-layout>
     <h1>Produkti</h1>
 
-    @if(session('success'))
-        <p style="color: green;">{{ session('success') }}</p>
-    @endif
+    <x-success-alert />
+
+    <x-errors-alert />
 
     <a href="{{ route('products.create') }}">+ Jauns produkts</a>
 
