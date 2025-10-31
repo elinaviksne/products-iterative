@@ -8,6 +8,7 @@
     grid-template-columns: 200px 1fr 200px;
     grid-template-rows: 60px auto 40px;
     min-height: 100vh;
+    gap: 5px; /* neliels atstarpe starp zonām */
 }
 
 .header {
@@ -17,12 +18,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 2px solid black; /* redzama robeža */
 }
 
 .sidebar-left {
     grid-area: sidebar-left;
-    background: #edf2f7;
+    background: #fbbf24; /* spilgta krāsa, vieglāk redzēt */
     padding: 1rem;
+    border: 2px solid black;
 }
 
 .sidebar-left ul {
@@ -34,15 +37,17 @@
 
 .sidebar-right {
     grid-area: sidebar-right;
-    background: #e2e8f0;
+    background: #34d399; /* atšķirīga krāsa */
     padding: 1rem;
     text-align: center;
+    border: 2px solid black;
 }
 
 .main-content {
     grid-area: main;
-    background: white;
+    background: #ffffff; /* balts */
     padding: 20px;
+    border: 2px solid black;
 }
 
 .footer {
@@ -52,4 +57,5 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 2px solid black;
 }
