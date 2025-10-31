@@ -8,13 +8,34 @@
 </head>
 <body class="font-sans antialiased bg-gray-100">
 
-    <nav style="background: #eee; padding: 10px;">
-        <a href="{{ route('products.index') }}">Produkti</a>
-    </nav>
+    <div class="layout-container">
 
-    <main style="margin: 20px;">
-        {{ $slot }}
-    </main>
+        <header class="header">
+            <h1>Testa Logo</h1>
+        </header>
+
+        <aside class="sidebar-left">
+            <nav>
+                <ul>
+                    <li><a href="{{ route('products.index') }}">Produkti</a></li>
+                    <!-- Pievieno citus linkus pēc vajadzības -->
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            {{ $slot }}
+        </main>
+
+        <aside class="sidebar-right">
+            Testa reklāmas teksts
+        </aside>
+
+        <footer class="footer">
+            &copy; 2025 Testa autortiesības
+        </footer>
+
+    </div>
 
 </body>
 </html>
