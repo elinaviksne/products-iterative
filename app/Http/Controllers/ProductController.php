@@ -27,6 +27,9 @@ class ProductController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
             'price' => 'required|numeric|min:0',
+            'quantity' => 'required|integer|min:0',
+            'expiration_date' => 'required|date',
+            'status' => 'required|in:available,unavailable',
         ]);
 
         Product::create($request->all());
@@ -53,6 +56,9 @@ class ProductController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
             'price' => 'required|numeric|min:0',
+            'quantity' => 'required|integer|min:0',
+            'expiration_date' => 'required|date',
+            'status' => 'required|in:available,unavailable',
         ]);
 
         $product->update($request->all());
