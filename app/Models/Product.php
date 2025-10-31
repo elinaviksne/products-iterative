@@ -17,4 +17,23 @@ class Product extends Model
         'expiration_date',
         'status'
     ];
+
+
+    public function increaseQuantity(int $amount = 1)
+    {
+        $this->quantity += $amount;
+        $this->save();
+    }
+
+    public function decreaseQuantity(int $amount = 1)
+    {
+        $this->quantity -= $amount;
+        if ($this->quantity < 0) {
+            $this->quantity = 0;
+        }
+        $this->save();
+    }
+
 }
+
+
