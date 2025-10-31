@@ -76,15 +76,25 @@ class ProductController extends Controller
 
     public function increase(Product $product)
     {
-        $product->increment('quantity');
-        return response()->json(['quantity' => $product->quantity]);
+        $product->increaseQuantity();
+
+        return response()->json([
+            'quantity' => $product->quantity,
+            'message' => 'Produkts palielināts par 1 vienību.'
+        ]);
     }
 
     public function decrease(Product $product)
     {
-        $product->decrement('quantity');
-        return response()->json(['quantity' => $product->quantity]);
+        $product->decreaseQuantity();
+
+        return response()->json([
+            'quantity' => $product->quantity,
+            'message' => 'Produkts samazināts par 1 vienību.'
+        ]);
     }
+
+
 
 
 }
