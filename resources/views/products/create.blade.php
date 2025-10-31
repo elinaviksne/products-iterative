@@ -1,9 +1,10 @@
 <x-layout>
     <h1>Jauns produkts</h1>
 
+    <x-success-alert />
 
     <x-errors-alert />
-    
+
     <form method="POST" action="{{ route('products.store') }}">
         @csrf
         <p>
