@@ -75,3 +75,24 @@ html, body {
     align-items: center;
     justify-content: center;
 }
+
+
+/* resources/css/app.css vai kāds cits tavs CSS fails */
+.flash-error {
+    background-color: #ffe5e5; /* gaiši sarkans fons */
+    border: 1px solid #ff0000; /* sarkana robeža */
+    color: #b30000; /* teksts tumši sarkans */
+    padding: 15px 20px; /* pietiekami iekšējie attālumi */
+    border-radius: 5px; /* noapaļoti stūri */
+    margin-bottom: 20px; /* atstarpe zem bloka */
+    word-wrap: break-word; /* teksts nepāriet ārpus bloka */
+}
+.flash-error strong {
+    display: block; /* “Kļūdas:” būs virs saraksta */
+    margin-bottom: 5px;
+}
+.flash-error ul {
+    margin: 0;
+    padding-left: 20px; /* ievelk sarakstu */
+}
+
