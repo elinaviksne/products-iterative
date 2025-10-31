@@ -1,23 +1,24 @@
 <x-layout>
     <h1>Produkti</h1>
-    <a href="{{ route('products.create') }}">+ Jauns produkts</a>
 
     @if(session('success'))
         <p style="color: green;">{{ session('success') }}</p>
     @endif
 
-    <table cellpadding="5">
+    <a href="{{ route('products.create') }}">+ Jauns produkts</a>
+
+    <table cellpadding="5" cellspacing="0" style="margin-top: 10px;">
         <tr>
+            <th>ID</th>
             <th>Nosaukums</th>
-            <th>Apraksts</th>
-            <th>Cena</th>
+            <th>Cena (€)</th>
             <th>Darbības</th>
         </tr>
         @foreach($products as $product)
         <tr>
+            <td>{{ $product->id }}</td>
             <td>{{ $product->name }}</td>
-            <td>{{ $product->description }}</td>
-            <td>{{ $product->price }} €</td>
+            <td>{{ $product->price }}</td>
             <td>
                 <a href="{{ route('products.show', $product) }}">Skatīt</a> |
                 <a href="{{ route('products.edit', $product) }}">Rediģēt</a> |
