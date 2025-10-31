@@ -1,11 +1,55 @@
-@import 'tailwindcss';
+/* Holy Grail layout */
+.layout-container {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "sidebar-left main sidebar-right"
+        "footer footer footer";
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: 60px auto 40px;
+    min-height: 100vh;
+}
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+.header {
+    grid-area: header;
+    background: #2d3748;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+.sidebar-left {
+    grid-area: sidebar-left;
+    background: #edf2f7;
+    padding: 1rem;
+}
+
+.sidebar-left ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-right {
+    grid-area: sidebar-right;
+    background: #e2e8f0;
+    padding: 1rem;
+    text-align: center;
+}
+
+.main-content {
+    grid-area: main;
+    background: white;
+    padding: 20px;
+}
+
+.footer {
+    grid-area: footer;
+    background: #2d3748;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
