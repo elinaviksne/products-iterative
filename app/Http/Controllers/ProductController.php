@@ -74,18 +74,17 @@ class ProductController extends Controller
         return redirect()->route('products.index')->with('success', 'Produkts veiksmīgi dzēsts!');
     }
 
-    // Palielināt quantity
     public function increase(Product $product)
     {
-        $product->increaseQuantity(1); // palielinām par 1
-        return redirect()->back()->with('success', 'Produkta daudzums palielināts!');
+        $product->increment('quantity');
+        return response()->json(['quantity' => $product->quantity]);
     }
 
-    // Samazināt quantity
     public function decrease(Product $product)
     {
-        $product->decreaseQuantity(1); // samazinām par 1
-        return redirect()->back()->with('success', 'Produkta daudzums samazināts!');
+        $product->decrement('quantity');
+        return response()->json(['quantity' => $product->quantity]);
     }
+
 
 }
