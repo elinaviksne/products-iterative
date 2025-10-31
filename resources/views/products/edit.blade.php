@@ -1,6 +1,10 @@
 <x-layout>
     <h1>Rediģēt produktu</h1>
 
+    <x-success-alert />
+
+    <x-errors-alert />
+
     <form method="POST" action="{{ route('products.update', $product) }}">
         @csrf
         @method('PUT')
