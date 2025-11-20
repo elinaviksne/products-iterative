@@ -1,4 +1,9 @@
 <x-layout>
+    <!-- Nodrošinām CSRF token JS pieprasījumiem -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    @vite(['resources/js/product-quantity.js'])
+
+    
     <h1>{{ $product->name }}</h1>
 
     <p><strong>Apraksts:</strong> {{ $product->description }}</p>
@@ -12,8 +17,5 @@
 
     <p><a href="{{ route('products.index') }}">Atpakaļ uz produktu sarakstu</a></p>
 
-    <!-- Nodrošinām CSRF token JS pieprasījumiem -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    @vite(['resources/js/product-quantity.js'])
+    
 </x-layout>
