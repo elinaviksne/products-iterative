@@ -1,5 +1,4 @@
-/* Holy Grail layout - full screen + slightly darker sidebars */
-/* Reset daži pamata stili */
+/* ===================== Reset un pamata stili ===================== */
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +11,7 @@ body, html {
     background-color: #f4f4f4;
 }
 
-/* Holy Grail layout */
+/* ===================== Holy Grail layout ===================== */
 .layout-container {
     display: grid;
     grid-template-areas:
@@ -37,7 +36,7 @@ body, html {
 /* Left sidebar */
 .sidebar-left {
     grid-area: sidebar-left;
-    background-color: #cbd5e0; /* tumšāks nekā main */
+    background-color: #cbd5e0;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -59,9 +58,18 @@ body, html {
 /* Right sidebar */
 .sidebar-right {
     grid-area: sidebar-right;
-    background-color: #cbd5e0; /* tumšāks nekā main */
+    background-color: #cbd5e0;
     padding: 20px;
     text-align: center;
+}
+
+.sidebar-right ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar-right li {
+    margin-bottom: 10px;
 }
 
 /* Main content */
@@ -82,34 +90,237 @@ body, html {
     justify-content: center;
 }
 
-
+/* ===================== Flash messages ===================== */
 .flash-error {
-    background-color: #ffe5e5; /* gaiši sarkans fons */
-    border: 1px solid #ff0000; /* sarkana robeža */
-    color: #b30000; /* teksts tumši sarkans */
-    padding: 15px 20px; /* pietiekami iekšējie attālumi */
-    border-radius: 5px; /* noapaļoti stūri */
-    margin-bottom: 20px; /* atstarpe zem bloka */
-    word-wrap: break-word; /* teksts nepāriet ārpus bloka */
-}
-.flash-error strong {
-    display: block; /* “Kļūdas:” būs virs saraksta */
-    margin-bottom: 5px;
-}
-.flash-error ul {
-    margin: 0;
-    padding-left: 20px; /* ievelk sarakstu */
-}
-
-
-.flash-success {
-    background-color: #e6ffed; /* gaiši zaļš fons */
-    border: 1px solid #4caf50; /* zaļa robeža */
-    color: #2d6a4f; /* tumši zaļš teksts */
+    background-color: #ffe5e5;
+    border: 1px solid #ff0000;
+    color: #b30000;
     padding: 15px 20px;
     border-radius: 5px;
     margin-bottom: 20px;
     word-wrap: break-word;
 }
 
+.flash-error strong {
+    display: block;
+    margin-bottom: 5px;
+}
 
+.flash-error ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.flash-success {
+    background-color: #e6ffed;
+    border: 1px solid #4caf50;
+    color: #2d6a4f;
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+}
+
+/* ===================== Produkta birkas ===================== */
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: inline-block;
+}
+
+/* Add tag form */
+.add-tag-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.add-tag-form input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.add-tag-form button {
+    background-color: #3b4a59;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.add-tag-form button:hover {
+    background-color: #2c3e50;
+}
+
+#tags-wrapper {
+    margin-top: 10px;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.tag {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.tag .delete-tag {
+    background: transparent;
+    border: none;
+    color: #fff;
+    margin-left: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9rem;
+    line-height: 1;
+    padding: 0;
+}
+
+.tag .delete-tag:hover {
+    color: #ffdddd;
+}
+
+#tag-input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+}
+
+.btn-update {
+    background-color: #3b4a59;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-update:hover {
+    background-color: #2c3e50;
+}
+
+
+/* ===================== Produkta daudzuma pogas ===================== */
+.quantity-buttons {
+    margin: 10px 0;
+}
+
+.quantity-buttons button {
+    padding: 6px 12px;
+    margin-right: 5px;
+    border: none;
+    background-color: #3b4a59;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.quantity-buttons button:hover {
+    background-color: #2c3e50;
+}
+
+/* ===================== Produkta tabula (index) ===================== */
+.top-actions {
+    margin-bottom: 15px;
+}
+
+.btn-add {
+    background-color: #3b4a59;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.btn-add:hover {
+    background-color: #2c3e50;
+}
+
+.products-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.products-table th, .products-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.products-table th {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.products-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Tabulas darbību pogas */
+.actions a, .actions button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s;
+}
+
+.btn-view {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.btn-view:hover {
+    background-color: #3e8e41;
+}
+
+.btn-edit {
+    background-color: #2196f3;
+    color: #fff;
+}
+
+.btn-edit:hover {
+    background-color: #1976d2;
+}
+
+.btn-delete {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.btn-delete:hover {
+    background-color: #d32f2f;
+}

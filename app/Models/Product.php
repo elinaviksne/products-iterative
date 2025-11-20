@@ -18,6 +18,10 @@ class Product extends Model
         'status'
     ];
 
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 
     public function increaseQuantity(int $amount = 1)
     {
